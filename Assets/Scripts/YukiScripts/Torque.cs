@@ -15,6 +15,8 @@ public class Torque : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        this.transform.Rotate(torque * Time.deltaTime);
+        this.transform.Rotate(torque * Time.deltaTime)
+            
+            ;
     }
 }
