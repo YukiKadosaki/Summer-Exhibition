@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Test : MonoBehaviour
+public class TestYuki2 : MonoBehaviour
 {
+    private float time = 0;
+
     // Start is called before the first frame update
     void Start()
     {
