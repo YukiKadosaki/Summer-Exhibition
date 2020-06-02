@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class katodeathdesu : MonoBehaviour
 {
-    Vector3 initpos;
+    private Vector3 returnpos;
 
     // Start is called before the first frame update
     void Start()
     {
-        initpos = transform.position;
+        ChangeReturnPosition(transform.position);
     }
 
     private void OnControllerColliderHit(ControllerColliderHit hit)
@@ -18,8 +18,12 @@ public class katodeathdesu : MonoBehaviour
 
         if(hit.gameObject.tag =="Water")
         {
-            transform.position = initpos;
+            transform.position = returnpos;
         }
     }
 
+    public void ChangeReturnPosition(Vector3 pos)
+    {
+        returnpos = pos;
+    }
 }
