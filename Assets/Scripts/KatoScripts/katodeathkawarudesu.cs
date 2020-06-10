@@ -5,7 +5,7 @@ using UnityEngine;
 public class katodeathkawarudesu : MonoBehaviour
 
 {
-    [SerializeField] private Material savedColor;
+    public Material savedColor;
     // Start is called before the first frame update
     void Start()
     {

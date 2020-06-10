@@ -14,10 +14,10 @@ public class katodeathdesu : MonoBehaviour
 
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
-        Debug.Log(hit.gameObject.name);
 
         if(hit.gameObject.tag =="Water")
         {
+            
             transform.position = returnpos;
         }
     }

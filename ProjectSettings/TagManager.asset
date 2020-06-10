@@ -8,6 +8,8 @@ TagManager:
   - MoveBlock
   - Water
   - SavePoint
+  - fall_block
+  - Gravity
   layers:
   - Default
   - TransparentFX
