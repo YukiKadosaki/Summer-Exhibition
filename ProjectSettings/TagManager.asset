@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Fire
   - MoveBlock
+  - Water
+  - SavePoint
+  - WarpGun
   layers:
   - Default
   - TransparentFX
