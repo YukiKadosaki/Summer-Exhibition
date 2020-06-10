@@ -8,8 +8,7 @@ TagManager:
   - MoveBlock
   - Water
   - SavePoint
-  - fall_block
-  - Gravity
+  - WarpGun
   layers:
   - Default
   - TransparentFX

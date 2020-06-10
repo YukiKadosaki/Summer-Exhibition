@@ -2,11 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody))]
 public class MoveForDestination : MonoBehaviour
 {
     public Vector3 destination;
     public float moveTime;
+    private Rigidbody rb;
     private Vector3 initpos;
+    private Vector3 previousPos;
+    private Vector3 speed;
+    private Vector3 position = Vector3.zero;
     private float time = 0;
     private int front = 1;
 
@@ -14,11 +19,13 @@ public class MoveForDestination : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        rb = GetComponent<Rigidbody>();
         initpos = transform.position;
+        previousPos = transform.position;
     }
 
     // Update is called once per frame
-    void Update()
+    private void FixedUpdate()
     {
         TryGoToDestination();
     }
@@ -51,11 +58,18 @@ public class MoveForDestination : MonoBehaviour
                 front = 1;
             }
         }
+        position += front * (destination / moveTime) * Time.deltaTime;
         time += Time.deltaTime;
     }
 
     private void GoToDestination()
     {
-        this.transform.position += front * (destination / moveTime) * Time.deltaTime;
+        previousPos = this.transform.position;
+        rb.MovePosition(initpos + position);
+    }
+
+    public Vector3 Speed()
+    {
+        return this.transform.position - previousPos;
     }
 }
