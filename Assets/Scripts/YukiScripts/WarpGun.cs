@@ -20,8 +20,11 @@ public class WarpGun : MonoBehaviour
     {
         if (hit.gameObject.tag == "Player")
         {
+            Debug.Log("Hit");
             this.transform.SetParent(hit.transform);
            
         }
     }
+
+
 }
