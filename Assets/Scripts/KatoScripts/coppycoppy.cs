@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Security.Cryptography;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
 using UnityStandardAssets.Utility;
@@ -9,7 +10,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 {
     [RequireComponent(typeof(CharacterController))]
     [RequireComponent(typeof(AudioSource))]
-    public class FirstPersonController : MonoBehaviour
+    public class coppycoppy : MonoBehaviour
     {
         [SerializeField] private bool m_IsWalking;
         [SerializeField] private float m_WalkSpeed;
@@ -42,6 +43,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private float m_NextStep;
         private bool m_Jumping;
         private AudioSource m_AudioSource;
+        private bool qkey;
+        private bool downGravity;
 
         // Use this for initialization
         private void Start()
@@ -82,6 +85,39 @@ namespace UnityStandardAssets.Characters.FirstPerson
             }
 
             m_PreviouslyGrounded = m_CharacterController.isGrounded;
+
+// 6.13
+            if (Input.GetKeyDown(KeyCode.Q))
+            {
+                qkey = true;
+                if (downGravity)
+                {
+                    m_GravityMultiplier = -0.09f;
+                    downGravity = false;
+                    transform.position += Vector3.up*2;
+                }
+                else
+                {
+                    m_GravityMultiplier = 2;
+                    downGravity = true;
+                }
+            }
+            else
+            {
+                qkey = false;
+            }
+
+           /* void OnControllColliderHit()
+            {
+                if (hit.gameObject.tag == "Water")
+                {
+                    downGravity = true;
+                    m_GravityMultiplier = 2;
+                }
+            }*/
+
+
+
         }
 
 
@@ -110,7 +146,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_MoveDir.z = desiredMove.z * speed;
 
 
-            if (m_CharacterController.isGrounded)
+            if (m_CharacterController.isGrounded && !qkey)
             {
                 m_MoveDir.y = -m_StickToGroundForce;
 
@@ -243,6 +279,14 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         private void OnControllerColliderHit(ControllerColliderHit hit)
         {
+
+            if (hit.gameObject.tag == "Water")
+            {
+                downGravity = true;
+                m_GravityMultiplier = 2;
+            }
+
+
             Rigidbody body = hit.collider.attachedRigidbody;
             //dont move the rigidbody if the character is on top of it
             if (m_CollisionFlags == CollisionFlags.Below)
@@ -254,7 +298,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             {
                 return;
             }
-            body.AddForceAtPosition(m_CharacterController.velocity * 0.1f, hit.point, ForceMode.Impulse);
+            body.AddForceAtPosition(m_CharacterController.velocity*0.1f, hit.point, ForceMode.Impulse);
         }
     }
 }
