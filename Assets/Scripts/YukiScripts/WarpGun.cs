@@ -18,12 +18,13 @@ public class WarpGun : MonoBehaviour
         {
             if (!weaponed)
             {
+                //銃がプレイヤーのほうを向く
+                transform.LookAt(other.transform.localPosition);
+
                 this.transform.SetParent(mainCamera.transform);
                 this.GetComponent<Rigidbody>().useGravity = false;
                 this.GetComponent<Rigidbody>().isKinematic = true;
                 this.transform.localPosition = new Vector3(1f, -0.3f, 1.5f);
-                //銃がプレイヤーのほうを向く
-                transform.LookAt(other.transform.localPosition) ;
 
                 //向こうを向く
                 transform.Rotate(new Vector3(0, 150, 0));
