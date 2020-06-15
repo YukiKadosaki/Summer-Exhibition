@@ -4,17 +4,22 @@ using UnityEngine;
 
 public class korogarurespowne : MonoBehaviour
 {
-    private Vector3 returnpos;
+    public Vector3 returnposi;
+    Rigidbody rb;
 
-    void Start()
+    private void Start()
     {
-        returnpos = this.transform.position;
+        rb = GetComponent<Rigidbody>();
     }
-    private void OnControllerColliderHit(ControllerColliderHit hit)
+
+
+    private void OnCollisionEnter(Collision collision)
     {
-        if (hit.gameObject.tag == "Water")
+        if (collision.gameObject.tag == "Water")
         {
-            transform.position = returnpos;
+            rb.isKinematic = true;
+            this.transform.position = returnposi;
         }
+        rb.isKinematic = false;
     }
 }

@@ -4,24 +4,19 @@ using UnityEngine;
 
 public class PlayerGun : MonoBehaviour
 {
-    CharacterController m_CharacerController;
+    private bool weaponed = false;
 
-    // Start is called before the first frame update
-    void Start()
+    public void GetGun(Collider other)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    private void OnControllerColliderHit(ControllerColliderHit hit)
-    {
-        if(hit.gameObject.tag == "WarpGun")
+        if (other.tag == "WarpGun")
         {
+            if (!weaponed) {
+                other.transform.SetParent(this.transform);
+                other.GetComponent<Rigidbody>().useGravity = false;
+                other.GetComponent<Rigidbody>().isKinematic = true;
+                other.transform.position = Vector3.forward;
+                weaponed = true;
+            }
         }
     }
 }
