@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 03902d0b450add74fa144e9510fd0f85, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.3467224, g: 0.4135556, b: 0.49675596, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -97,7 +97,8 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: c65f3fac891abb54f9a179b0044d2c46,
+    type: 2}
   m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
@@ -189,8 +190,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 13916424}
-  m_LocalRotation: {x: 0.12541424, y: -0.5922476, z: 0.09533614, w: 0.7902057}
-  m_LocalPosition: {x: -110.10618, y: -16.263638, z: -1.8445034}
+  m_LocalRotation: {x: 0.17103733, y: 0.13258076, z: 0.021995468, w: -0.97605574}
+  m_LocalPosition: {x: 47.799843, y: -83.480545, z: -172.40266}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1104,7 +1105,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   localGravity: {x: -9.8, y: 0, z: 0}
---- !u!114 &467522259
+--- !u!114 &467522260
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1113,11 +1114,121 @@ MonoBehaviour:
   m_GameObject: {fileID: 467522251}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37d8e7680ab92194aa0a3e10e3dd2e7b, type: 3}
+  m_Script: {fileID: 11500000, guid: fe3b880377588434cbdff9bdcd4c5eed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  localGravity: {x: -0.09, y: 0, z: 0}
-  LocalGravity: {x: 0, y: -9.8, z: 0}
+  m_IsWalking: 0
+  m_WalkSpeed: 5
+  m_RunSpeed: 10
+  m_RunstepLenghten: 0.7
+  m_JumpSpeed: 10
+  m_StickToGroundForce: 10
+  m_GravityMultiplier: 2
+  m_MouseLook:
+    XSensitivity: 2
+    YSensitivity: 2
+    clampVerticalRotation: 1
+    MinimumX: -90
+    MaximumX: 90
+    smooth: 0
+    smoothTime: 5
+    lockCursor: 1
+  m_UseFovKick: 1
+  m_FovKick:
+    Camera: {fileID: 0}
+    originalFov: 0
+    FOVIncrease: 3
+    TimeToIncrease: 1
+    TimeToDecrease: 1
+    IncreaseCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 2
+        outSlope: 2
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  m_UseHeadBob: 1
+  m_HeadBob:
+    HorizontalBobRange: 0.1
+    VerticalBobRange: 0.1
+    Bobcurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 0.5
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1.5
+        value: -1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 2
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    VerticaltoHorizontalRatio: 2
+  m_JumpBob:
+    BobDuration: 0
+    BobAmount: 0
+  m_StepInterval: 5
+  m_FootstepSounds:
+  - {fileID: 8300000, guid: 42e65e088b3f4374e851b8dbd38f3df9, type: 3}
+  - {fileID: 8300000, guid: 8bc94ec6ed537e743b481638bdcd503d, type: 3}
+  m_JumpSound: {fileID: 8300000, guid: 5897aeed9b676024fbb8c694b421a861, type: 3}
+  m_LandSound: {fileID: 8300000, guid: 3b09d59f4499d45428baa7a21e954296, type: 3}
 --- !u!1 &493418360
 GameObject:
   m_ObjectHideFlags: 0
@@ -2344,6 +2455,10 @@ PrefabInstance:
       propertyPath: m_GravityMultiplier
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
 --- !u!1 &874602681
@@ -3022,6 +3137,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae63946b538b7ef45b12031f6a183701, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LocalGravity2: {x: 0, y: -9.8, z: 0}
   savedColor: {fileID: 2100000, guid: b17b57ad9a3310243ab9c15472866e24, type: 2}
 --- !u!65 &1081683404
 BoxCollider:
@@ -3483,6 +3599,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae63946b538b7ef45b12031f6a183701, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LocalGravity2: {x: 0, y: -9.8, z: 0}
   savedColor: {fileID: 2100000, guid: b17b57ad9a3310243ab9c15472866e24, type: 2}
 --- !u!82 &1220082735
 AudioSource:
