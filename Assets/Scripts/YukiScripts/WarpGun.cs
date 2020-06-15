@@ -4,27 +4,33 @@ using UnityEngine;
 
 public class WarpGun : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private bool weaponed = false;
+    private GameObject mainCamera;
+
+    private void Start()
     {
-        
+        mainCamera = GameObject.Find("FirstPersonCharacter");
     }
 
-    // Update is called once per frame
-    void Update()
+    public void GetGun(Collider other)
     {
-        
-    }
-
-    private void OnControllerColliderHit(ControllerColliderHit hit)
-    {
-        if (hit.gameObject.tag == "Player")
+        if (other.tag == "Player")
         {
-            Debug.Log("Hit");
-            this.transform.SetParent(hit.transform);
-           
+            if (!weaponed)
+            {
+                this.transform.SetParent(mainCamera.transform);
+                this.GetComponent<Rigidbody>().useGravity = false;
+                this.GetComponent<Rigidbody>().isKinematic = true;
+                this.transform.localPosition = new Vector3(1f, -0.3f, 1.5f);
+                //銃がプレイヤーのほうを向く
+                transform.LookAt(other.transform.localPosition) ;
+
+                //向こうを向く
+                transform.Rotate(new Vector3(0, 150, 0));
+                
+                Debug.Log(Vector3.forward);
+                weaponed = true;
+            }
         }
     }
-
-
 }

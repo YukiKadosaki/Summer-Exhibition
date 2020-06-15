@@ -136,6 +136,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
             Debug.Log("M1:" + m_MoveDir);
             //Debug.Log("StepCycle" + m_StepCycle);
+            //
             if (transform.parent != null)
             {
                 m_MoveDir += transform.parent.gameObject.GetComponent<Rigidbody>().velocity;
