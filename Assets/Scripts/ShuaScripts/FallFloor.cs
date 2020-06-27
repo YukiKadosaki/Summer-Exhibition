@@ -14,7 +14,6 @@ public class FallFloor : MonoBehaviour
 
     void Fall()
     {
-        Debug.Log("a");
         GetComponent<Rigidbody>().isKinematic = false;
     }
 }
