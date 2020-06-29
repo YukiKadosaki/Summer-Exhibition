@@ -9,6 +9,8 @@ TagManager:
   - Water
   - SavePoint
   - WarpGun
+  - Teleport1
+  - Teleport2
   layers:
   - Default
   - TransparentFX
