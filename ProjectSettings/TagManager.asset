@@ -11,6 +11,7 @@ TagManager:
   - WarpGun
   - Teleport1
   - Teleport2
+  - Teleport0
   layers:
   - Default
   - TransparentFX

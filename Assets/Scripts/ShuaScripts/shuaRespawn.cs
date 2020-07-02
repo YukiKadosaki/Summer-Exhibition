@@ -5,6 +5,7 @@ using UnityEngine;
 public class shuaRespawn : MonoBehaviour
 {
     private Vector3 returnpos;
+    [SerializeField] private Vector3 telep0;
 
 
 
@@ -20,10 +21,15 @@ public class shuaRespawn : MonoBehaviour
         {
             transform.position = returnpos;
         }
-        
-        if(hit.gameObject.tag == "Teleport1")
+
+        if (hit.gameObject.tag == "Teleport0")
         {
-            transform.position = new Vector3(-66, 2, 40);
+            transform.position = telep0;
+        }
+
+        if (hit.gameObject.tag == "Teleport1")
+        {
+            transform.position = new Vector3(-87, 2, 85);
         }
 
         if (hit.gameObject.tag == "Teleport2")
