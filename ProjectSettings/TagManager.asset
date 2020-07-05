@@ -9,6 +9,9 @@ TagManager:
   - Water
   - SavePoint
   - WarpGun
+  - fall_block
+  - Death
+  - Water3
   layers:
   - Default
   - TransparentFX
