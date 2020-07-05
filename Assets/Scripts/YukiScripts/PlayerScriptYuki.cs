@@ -134,8 +134,9 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 m_MoveDir += Physics.gravity * m_GravityMultiplier * Time.fixedDeltaTime;
             }
 
-            Debug.Log("M1:" + m_MoveDir);
+
             //Debug.Log("StepCycle" + m_StepCycle);
+            //
             if (transform.parent != null)
             {
                 m_MoveDir += transform.parent.gameObject.GetComponent<Rigidbody>().velocity;
@@ -253,6 +254,13 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private void RotateView()
         {
             m_MouseLook.LookRotation(transform, m_Camera.transform);
+        }
+
+        public void GunWarp(Vector3 position)
+        {
+            this.GetComponent<CharacterController>().enabled = false;
+            this.transform.position = position;
+            this.GetComponent<CharacterController>().enabled = true;
         }
 
 
