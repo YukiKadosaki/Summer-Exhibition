@@ -14,7 +14,7 @@ public class YukiRespawn : MonoBehaviour
 
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
-        if(hit.gameObject.tag == "Water")
+        if(hit.gameObject.tag == "Water" || hit.gameObject.tag == "Death")
         {
             transform.position = returnpos;
         }
