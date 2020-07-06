@@ -9,6 +9,9 @@ TagManager:
   - Water
   - SavePoint
   - WarpGun
+  - fall_block
+  - Death
+  - Water3
   - Teleport1
   - Teleport2
   - Teleport0
