@@ -16,6 +16,7 @@ TagManager:
   - Teleport2
   - Teleport0
   - Goal
+  - Goal2
   layers:
   - Default
   - TransparentFX
