@@ -11,23 +11,23 @@ public class Teleporter : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            SceneManager.LoadScene("Stage1");
+            SceneManager.LoadScene("Stage1-demo");
         }
         else if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            SceneManager.LoadScene("Stage2");
+            SceneManager.LoadScene("Stage2-demo");
         }
         else if (Input.GetKeyDown(KeyCode.Alpha3))
         {
-            SceneManager.LoadScene("Stage3");
+            SceneManager.LoadScene("Stage3-demo");
         }
         else if (Input.GetKeyDown(KeyCode.Alpha4))
         {
-            SceneManager.LoadScene("Stage4");
+            SceneManager.LoadScene("Stage4-demo");
         }
         else if (Input.GetKeyDown(KeyCode.Alpha5))
         {
-            SceneManager.LoadScene("stage5");
+            SceneManager.LoadScene("stage5-demo");
         }
         else if (Input.GetKeyDown(KeyCode.Alpha6))
         {
