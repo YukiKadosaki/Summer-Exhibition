@@ -37,10 +37,6 @@ public class Teleporter : MonoBehaviour
         {
             SceneManager.LoadScene("TitleScene");
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha9))
-        {
-            SceneManager.LoadScene("EndStage");
-        }
 
     }
 }
