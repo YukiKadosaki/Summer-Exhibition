@@ -16,7 +16,7 @@ public class EXGoal : MonoBehaviour
         if (collider.gameObject.tag == "Goal2")
         {
             GameObject ex = GameObject.Find("exgoal");
-            ex.GetComponent<AudioSource>().Play();
+            
             Invoke("Praise", 3);
             obj.GetComponent<TMP_Text>().text = "Congratulations";
         }

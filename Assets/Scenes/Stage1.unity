@@ -222,8 +222,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 13916424}
-  m_LocalRotation: {x: 0.06507038, y: 0.8819773, z: 0.44891548, w: -0.12789361}
-  m_LocalPosition: {x: -84.313675, y: -236.46652, z: 152.10672}
+  m_LocalRotation: {x: 0.021257786, y: -0.97930366, z: -0.17756113, w: -0.09478676}
+  m_LocalPosition: {x: 2.649704, y: -38.583267, z: 212.82593}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1621,6 +1621,8 @@ MonoBehaviour:
   nextscene: Stage3
   goalString: Congratulations
   delayTime: 3
+  clearSound: {fileID: 8300000, guid: 23d45f78451ce75459bb1c8806c09d67, type: 3}
+  clearSound2: {fileID: 8300000, guid: 23d45f78451ce75459bb1c8806c09d67, type: 3}
 --- !u!114 &467522257
 MonoBehaviour:
   m_ObjectHideFlags: 0

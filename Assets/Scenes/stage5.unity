@@ -4789,6 +4789,8 @@ MonoBehaviour:
   nextscene: Stage1
   goalString: Congratulations
   delayTime: 3
+  clearSound: {fileID: 8300000, guid: 23d45f78451ce75459bb1c8806c09d67, type: 3}
+  clearSound2: {fileID: 8300000, guid: 934c005d98fa0a647907856970a256cd, type: 3}
 --- !u!114 &409822894
 MonoBehaviour:
   m_ObjectHideFlags: 0
